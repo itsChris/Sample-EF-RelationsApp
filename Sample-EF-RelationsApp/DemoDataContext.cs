@@ -10,5 +10,6 @@ namespace Sample_EF_RelationsApp
         }
 
         public DbSet<Person> PersonList { get; set; }
+        public DbSet<CustomTask> TastList { get; set; }
     }
 }
