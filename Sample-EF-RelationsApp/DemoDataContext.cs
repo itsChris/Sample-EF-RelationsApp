@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 
 namespace Sample_EF_RelationsApp
 {
@@ -7,6 +8,8 @@ namespace Sample_EF_RelationsApp
         public DemoDataContext() : base("MyDemoDbContext")
         {
             Database.SetInitializer(new CreateDatabaseIfNotExists<DemoDataContext>());
+            // Write generated SQL to Console
+            Database.Log = Console.Write;
         }
 
         public DbSet<Person> PersonList { get; set; }
